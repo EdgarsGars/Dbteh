@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TaskRepository {
 
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb?user=newuser&password=abcd123";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb?user=root&password=parole";
 
     public static ArrayList<Task> getTasksForEmployee(Employee e) {
         Connection conn = null;
@@ -109,17 +109,22 @@ public class TaskRepository {
             conn = DriverManager.getConnection(DB_URL);
 
             stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select taskID, subject,s.statusName,tp.typeName,p.priorityName,t.startDate from task t join status s on t.status = statusID join type tp on t.type = tp.typeID join priority p on t.priority = p.priorityID where t.projectID =" + projectID);
+            ResultSet rs = stmt.executeQuery("select taskID,assignee,firstname,lastname,subject,status,type,priority,description,startDate,endDate from alltasks where projectID = "+projectID+" order by startDate desc");
             ArrayList<Task> tasks = new ArrayList<>();
             while (rs.next()) {
                 Task t = new Task();
                 t.taskID = rs.getInt("taskID");
                 t.subject = rs.getString("subject");
-                t.status = rs.getString("statusName");
+                t.description = rs.getString("description");
+                t.status = rs.getString("status");
                 t.startdDate = rs.getString("startDate");
-                t.type = rs.getString("typeName");
-                t.priority = rs.getString("priorityName");
-                //t.assigne = e;
+                t.type = rs.getString("type");
+                t.priority = rs.getString("priority");
+                t.assigne = new Employee();
+                t.assigne.accountID=rs.getInt("assignee");
+                t.assigne.firstname=rs.getString("firstname");
+                t.assigne.lastname=rs.getString("lastname");
+                
                 tasks.add(t);
             }
             conn.close();

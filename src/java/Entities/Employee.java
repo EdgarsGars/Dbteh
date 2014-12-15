@@ -20,6 +20,7 @@ public class Employee implements Serializable {
     public int totalTasks;
     public int completedTasks;
     public double completionRate;
+    public String role;
 
     public Employee(int accountID, String firstname, String lastname, String email) {
         this.accountID = accountID;

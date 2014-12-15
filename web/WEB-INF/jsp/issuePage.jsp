@@ -47,10 +47,9 @@
     </head>
     <body>
 
-        <div id='topmenu'>
+       <div id='topmenu'>
             <ul>
-                <li><a href='/Dbteh/'><span>Home</span></a></li>
-                <li class='active'><a href='#'><span>Projects</span></a></li>
+                <li class='active'><a href='/Dbteh/'><span>Projects</span></a></li>
                 <li><a href='/Dbteh/projectCreation'><span>Add Project</span></a></li>
                 <li class='last'><a href='/Dbteh/logout'><span>Logout</span></a></li>
             </ul>

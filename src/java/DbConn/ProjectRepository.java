@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class ProjectRepository {
 
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb?user=newuser&password=abcd123";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb?user=root&password=parole";
 
     public static ArrayList<Project> getEmployeeProjects(int employeeID) {
         //select e.accountID,e.firstname,e.lastname,e.email from project_roles pr join employee e on pr.accountID = e.accountID where projectID = 2;

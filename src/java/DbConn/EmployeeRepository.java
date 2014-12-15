@@ -21,7 +21,7 @@ public class EmployeeRepository {
     
     
    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb?user=newuser&password=abcd123";
+   private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb?user=root&password=parole";
     
     
     public static Employee getEmployeeByID(int accountID){
@@ -65,13 +65,17 @@ public class EmployeeRepository {
               conn = DriverManager.getConnection(DB_URL);
               
               stmt = conn.createStatement();
-              ResultSet rs = stmt.executeQuery("select e.accountID,e.firstname,e.lastname,e.email from project_roles pr join employee e on pr.accountID = e.accountID where projectID = "+projectID);
+              ResultSet rs = stmt.executeQuery("select accountID,firstname,lastname,email,role from employeeinproject where projectID  = "+projectID);
               while(rs.next()){
-                  int accountID = rs.getInt("accountID");
-                  String firstname = rs.getString("firstname");
-                  String lastname  = rs.getString("lastname");
-                  String email     = rs.getString("email");
-                  list.add(new Employee(accountID, firstname, lastname, email));
+                  
+                  Employee e = new Employee();
+                  e.accountID = rs.getInt("accountID");
+                  e.firstname = rs.getString("firstname");
+                  e.lastname  = rs.getString("lastname");
+                  e.email     = rs.getString("email");
+                  e.role      = rs.getString("role");
+                  
+                  list.add(e);
                   
               }
              

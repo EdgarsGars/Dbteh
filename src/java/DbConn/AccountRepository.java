@@ -18,7 +18,7 @@ import java.sql.Statement;
  */
 public class AccountRepository {
    private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb?user=newuser&password=abcd123";
+   private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb?user=root&password=parole";
 
    
    public static Employee login(String username,String password){

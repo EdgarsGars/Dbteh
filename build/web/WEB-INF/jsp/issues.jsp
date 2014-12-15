@@ -18,14 +18,13 @@
         <link href="css/topMenu.css" rel="stylesheet">
         <title>Issues</title>
     </head>
-    <body>
-          <div id='topmenu'>
-        <ul>
-            <li><a href='/Dbteh/'><span>Home</span></a></li>
-            <li><a href='/Dbteh/projects'><span>Projects</span></a></li>
-            <li class='last'><a href='/Dbteh/logout'><span>Logout</span></a></li>
-        </ul>
-    </div>
+    <div id='topmenu'>
+            <ul>
+                <li class='active'><a href='/Dbteh/'><span>Projects</span></a></li>
+                <li><a href='/Dbteh/projectCreation'><span>Add Project</span></a></li>
+                <li class='last'><a href='/Dbteh/logout'><span>Logout</span></a></li>
+            </ul>
+        </div>
 
         <div class="issueBox">
             <div class="filterBox">
