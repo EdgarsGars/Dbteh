@@ -1,0 +1,53 @@
+@CHARSET "ISO-8859-1";
+
+body{
+    background-color: #AA1F1F;
+}
+
+#login {
+  background-color : #ed6464;
+  display: inline-block;
+  border-radius : 20px;
+  width : 25%;
+  margin-left : 40%;
+  margin-top  : 20%;
+  
+}
+
+#login h1{
+    text-align: center;
+    color: white;
+    font-family:'Open Sans',sans-serif;
+    font-size:25px;
+}
+
+#login form{
+  background-color : white;
+  padding:6% 6%;
+  border-bottom-left-radius: 20px;
+  
+  border-bottom-right-radius: 20px;
+}
+
+
+#login input{
+  width : 94%;
+}
+
+#login input[type="text"],input[type="password"]{
+  margin-bottom:8%;
+  border:1px solid #ccc;
+  
+}
+
+#login input[type="submit"]{
+  background-color : #ed6464;
+  transition:background .8s;
+  border-style : none;
+  height:45px;   
+  color:white;
+}
+#login input[type="submit"]:hover{
+  background:#CE3D3D;
+  
+}
