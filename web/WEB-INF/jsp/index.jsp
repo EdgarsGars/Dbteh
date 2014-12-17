@@ -29,7 +29,7 @@
             ArrayList<Project> projects = ProjectRepository.getEmployeeProjects(e.getAccountID());
             for (Project p : projects) {
                 out.println("<table class=\"taskTable\"><tr><td colspan=\"6\"><a href=\"/Dbteh/project?projectID=" + p.projectID + "\">" + p.projectName + "</a></tr>");
-                out.print("<tr ><td style=\"background-color:yellow;\">#</td><td style=\"background-color:yellow;\">Type</td> <td style=\"background-color:yellow;\">Status</td> <td style=\"background-color:yellow;\">Priority</td > <td style=\"background-color:yellow;\">Subject</td><td style=\"background-color:yellow;\">Date</td> </tr> ");
+                out.print("<tr ><td style=\"background-color:#EDA264;\">#</td><td style=\"background-color:#EDA264;\">Type</td> <td style=\"background-color:#EDA264;\">Status</td> <td style=\"background-color:#EDA264;\">Priority</td > <td style=\"background-color:#EDA264;\">Subject</td><td style=\"background-color:#EDA264;\">Date</td> </tr> ");
 
                 for (Task t : TaskRepository.getTasksForEmployeeInProject(e, p)) {
                     if (!t.status.equals("Closed")) {

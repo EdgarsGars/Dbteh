@@ -16,9 +16,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import javax.servlet.http.HttpSession;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -124,6 +121,7 @@ public class TaskRepository {
                 t.assigne.accountID=rs.getInt("assignee");
                 t.assigne.firstname=rs.getString("firstname");
                 t.assigne.lastname=rs.getString("lastname");
+                t.endDate = rs.getString("endDate");
                 
                 tasks.add(t);
             }
@@ -239,7 +237,7 @@ public class TaskRepository {
             conn = DriverManager.getConnection(DB_URL);
 
             stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select taskID, assignee,subject,description,s.statusName,tp.typeName,p.priorityName,t.startDate from task t join status s on t.status = statusID join type tp on t.type = tp.typeID join priority p on t.priority = p.priorityID where t.taskID =" + taskID + ";");
+            ResultSet rs = stmt.executeQuery("select taskID, assignee,creator,subject,description,s.statusName,tp.typeName,p.priorityName,t.startDate,t.endDate from task t join status s on t.status = statusID join type tp on t.type = tp.typeID join priority p on t.priority = p.priorityID where t.taskID =" + taskID + ";");
             Task t = new Task();
             if (rs.next()) {
                 t.taskID = rs.getInt("taskID");
@@ -247,10 +245,13 @@ public class TaskRepository {
                 t.status = rs.getString("statusName");
                 t.startdDate = rs.getString("startDate");
                 t.type = rs.getString("typeName");
+                t.endDate = rs.getString("endDate");
                 t.priority = rs.getString("priorityName");
                 t.description = rs.getString("description");
                 t.assigne = new Employee();
                 t.assigne.accountID = rs.getInt("assignee");
+                t.creator = new Employee();
+                t.creator.accountID = rs.getInt("creator");
             }
             conn.close();
             return t;

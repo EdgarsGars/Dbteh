@@ -27,7 +27,8 @@ public class AccountRepository {
        try{
               Class.forName(JDBC_DRIVER);
               conn = DriverManager.getConnection(DB_URL);
-              
+              Statement stms2 = conn.createStatement();
+              stms2.execute("call accountLog('"+username+"','"+password+"');");
               stmt = conn.createStatement();
               ResultSet rs = stmt.executeQuery("select a.accountID,firstname,lastname,email from employee a JOIN account b on a.accountID = b.accountID where b.username='"+username+"' and b.password='"+password+"';");
               if(rs.next()){

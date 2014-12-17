@@ -47,7 +47,7 @@
     </head>
     <body>
 
-       <div id='topmenu'>
+        <div id='topmenu'>
             <ul>
                 <li class='active'><a href='/Dbteh/'><span>Projects</span></a></li>
                 <li><a href='/Dbteh/projectCreation'><span>Add Project</span></a></li>
@@ -101,6 +101,17 @@
                                     }
                                 %> 
                             </select></td><td>End Date:</td><td><%=task.endDate%></td></tr>
+                    <tr><td>Creator:</td><td>
+                            <%
+                                    for (Employee e : team) {
+                                        if (task.creator.accountID == e.accountID) {
+                                            out.print(e.firstname+" "+e.lastname);
+                                            break;
+                                        }
+                                    }
+                            %>
+                        </td><tr>
+
                 </table>
                 <hr>
                 <h4>Description</h4>
@@ -115,7 +126,10 @@
                     <table>
                         <%
                             ArrayList<Comment> comments = TaskRepository.getTaskComments(taskID);
-                            for (Comment c : comments) {
+                            for (Comment c : comments
+
+                            
+                                ) {
                                 out.print("<tr><td>[" + c.time + "]</td><td>" + c.author.firstname + " " + c.author.lastname + "</td> <td>: " + c.text + "</td > </tr> ");
                             }
                         %>

@@ -69,7 +69,7 @@ public class DefaultController {
     @RequestMapping(value = "/projects", method = RequestMethod.GET)
     public String projects(ModelMap map, HttpSession session, SessionStatus status) {
         if (session.getAttribute("user") != null) {
-            return "projectListPage";
+            return "redirect:/";
         } else {
             return "redirect:/login";
         }

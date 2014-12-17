@@ -3,13 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/WEB-INF/jsp/issuePage.jsp</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/src/java/DbConn/ProjectRepository.java</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/src/java/Entities/Task.java</file>
             <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/src/java/dbteh/controllers/DefaultController.java</file>
-            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/redirect.jsp</file>
-            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/WEB-INF/applicationContext.xml</file>
-            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/WEB-INF/spring-servlet.xml</file>
-            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/src/java/DbConn/AccountRepository.java</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/WEB-INF/css/topMenu.css</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/src/java/DbConn/EmployeeRepository.java</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/src/java/DbConn/TaskRepository.java</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/WEB-INF/css/loginForm.css</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/web/WEB-INF/jsp/projectPage.jsp</file>
+            <file>file:/C:/Users/Edgar/Documents/NetBeansProjects/Dbteh/src/java/dbteh/DefaultController.java</file>
         </group>
     </open-files>
 </project-private>

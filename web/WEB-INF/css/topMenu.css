@@ -1,5 +1,10 @@
 @CHARSET "ISO-8859-1";
 
+body {
+    background-color: #FFBBBB;
+}
+
+
 #topmenu {
     background: #ed6464;
     width: auto;
